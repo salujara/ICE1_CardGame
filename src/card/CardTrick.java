@@ -61,5 +61,11 @@ import java.util.Scanner;
 
         System.out.println(found ? "Found your card!" : "Card not found!");
 
+        // Hard Coded LuckyCard
+        
+        Card luckyCard = new Card();
+        luckyCard.setValue(11);
+        luckyCard.setSuit("Spades");
+
 
     }}
