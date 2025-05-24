@@ -63,5 +63,5 @@ import java.util.Scanner;
 
         Card luckyCard = new Card();
         luckyCard.setValue(7);
-        luckyCard.setSuit("Hearts");
+        luckyCard.setSuit("Spades");
     }}
