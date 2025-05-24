@@ -34,32 +34,32 @@ import java.util.Scanner;
             System.out.println(c.getSuit() + " " + c.getValue());
         }
         
-        // Step 4 - Ask the user for input
-        System.out.println("Pick a card.");
-        System.out.println("Enter a value from 1-13!");
-        int input = scanner.nextInt();
-
-        // Step 4.2 - Ask user for the suit
-        System.out.println("Pick a suit: ");
-        for (int i = 0; i < Card.SUITS.length; i++) {
-            System.out.println((i + 1) + ". " + Card.SUITS[i]);
-        }
-        int suit = scanner.nextInt();
-
-        Card yourCard = new Card();
-        yourCard.setValue(input);
-        yourCard.setSuit(Card.SUITS[suit -1]);
-
-        // Step 4.3 - Search for the card in the users hand
-        boolean found = false;
-        for (Card card : magicHand) {
-            if (card.getValue() == yourCard.getValue() && card.getSuit().equals(yourCard.getSuit())) {
-                found = true;
-                break;
-            }
-        }
-
-        System.out.println(found ? "Found your card!" : "Card not found!");
+//        // Step 4 - Ask the user for input
+//        System.out.println("Pick a card.");
+//        System.out.println("Enter a value from 1-13!");
+//        int input = scanner.nextInt();
+//
+//        // Step 4.2 - Ask user for the suit
+//        System.out.println("Pick a suit: ");
+//        for (int i = 0; i < Card.SUITS.length; i++) {
+//            System.out.println((i + 1) + ". " + Card.SUITS[i]);
+//        }
+//        int suit = scanner.nextInt();
+//
+//        Card yourCard = new Card();
+//        yourCard.setValue(input);
+//        yourCard.setSuit(Card.SUITS[suit -1]);
+//
+//        // Step 4.3 - Search for the card in the users hand
+//        boolean found = false;
+//        for (Card card : magicHand) {
+//            if (card.getValue() == yourCard.getValue() && card.getSuit().equals(yourCard.getSuit())) {
+//                found = true;
+//                break;
+//            }
+//        }
+//
+//        System.out.println(found ? "Found your card!" : "Card not found!");
 
         // Hard Coded LuckyCard
         
@@ -67,5 +67,18 @@ import java.util.Scanner;
         luckyCard.setValue(11);
         luckyCard.setSuit("Spades");
 
+        boolean lucky_found = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+                lucky_found = true;
+                break;
+            }
+        }
+
+        if (lucky_found) {
+            System.out.println("Victory! You found the lucky card! The 7 of Hearts!");
+        } else {
+            System.out.println("Sorry you lose! None of the 7 cards you found were the lucky card! :(");
+        }
 
     }}
